@@ -1,7 +1,7 @@
 {
-  "menu.technologies": "Tecnologías",
-  "menu.requirements": "Requerimientos",
-  "menu.login": "Login",
   "menu.home": "Inicio",
-  "menu.benefits": "Beneficios"
+  "menu.technologies": "Tecnologías",
+  "menu.benefits": "Beneficios",
+  "menu.requirements": "Requerimientos",
+  "menu.login": "Login"
 }

@@ -3,6 +3,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  &__locales {
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: none;
+      background: none;
+      transition: all 0.3s ease;
+      width: 2.5em;
+      padding: 0.5em;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      &:hover {
+        transform: translateY(-5%);
+      }
+    }
+  }
 }
 
 .footer-background {
@@ -27,7 +50,7 @@
 
   &__image {
     height: 120vh;
-    background-image: url(https://s3.amazonaws.com/cdn.wolox.com/assets/background_footer.png);
+    background-image: url(https://s3.amazonaws.com/cdn.wolox.com/images/background_footer.png);
     background-repeat: repeat-y;
     background-size: contain;
     animation: bgAnimationOut 20s linear infinite;

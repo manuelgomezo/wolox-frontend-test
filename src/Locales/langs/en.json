@@ -1,1 +1,7 @@
-{}
+{
+  "menu.home": "Home",
+  "menu.technologies": "Technologies",
+  "menu.benefits": "Benefits",
+  "menu.requirements": "Requirements",
+  "menu.login": "Login"
+}
