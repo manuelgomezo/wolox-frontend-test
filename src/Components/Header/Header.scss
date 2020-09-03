@@ -1,0 +1,83 @@
+@import '../../Styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1em;
+
+    @include from-tablet {
+      padding: 2em;
+    }
+  }
+
+  &__logo {
+    flex-basis: calc(100% / 6 * 5);
+    max-width: calc(100% / 6 * 5);
+    padding: 1em 0.5em;
+    text-align: center;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5%);
+    }
+
+    svg {
+      width: 15em;
+      max-width: 100%;
+      animation: zoomIn 1s ease;
+    }
+
+    @include from-tablet {
+      flex-basis: calc(100% / 6);
+      max-width: calc(100% / 6);
+    }
+  }
+
+  &__menu {
+    flex-basis: calc(100% / 6);
+    max-width: calc(100% / 6);
+
+    @include from-tablet {
+      flex-basis: calc(100% / 6 * 5);
+      max-width: calc(100% / 6 * 5);
+    }
+  }
+}
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  z-index: -1;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 3em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 -1.5em 1em var(--white);
+  }
+
+  &__image {
+    height: 120vh;
+    background-image: url(https://s3.amazonaws.com/cdn.wolox.com/assets/background_header.png);
+    background-repeat: repeat-y;
+    animation: bgAnimationIn 20s linear infinite;
+  }
+}

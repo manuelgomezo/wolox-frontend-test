@@ -1,0 +1,28 @@
+@import './mixins.scss';
+@import './reset.scss';
+@import './fonts.scss';
+@import './theme.scss';
+@import './keyframes.scss';
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--primary-dark);
+}
+
+.max-width {
+  max-width: 1440px;
+}
+
+.noDesktop {
+  @include from-tablet {
+    display: none;
+  }
+}
+
+.noMobile {
+  display: none;
+
+  @include from-tablet {
+    display: block;
+  }
+}

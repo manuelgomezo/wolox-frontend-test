@@ -1,0 +1,11 @@
+.svg {
+  width: 100%;
+}
+
+.svg-anim {
+  &__sliceIn {
+    transform-origin: center;
+    animation-name: sliceIn;
+    animation-duration: 1.5s;
+  }
+}

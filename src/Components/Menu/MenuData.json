@@ -1,0 +1,28 @@
+[
+  {
+    "title": "menu.home",
+    "type": "link",
+    "link": "#"
+  },
+  {
+    "title": "menu.technologies",
+    "type": "link",
+    "link": "#"
+  },
+  {
+    "title": "menu.benefits",
+    "type": "link",
+    "link": "#"
+  },
+  {
+    "title": "menu.requirements",
+    "type": "link",
+    "link": "#"
+  },
+  {
+    "title": "menu.login",
+    "class": "menu__item--login",
+    "type": "link",
+    "link": "#"
+  }
+]

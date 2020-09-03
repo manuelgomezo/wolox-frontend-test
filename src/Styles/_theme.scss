@@ -1,0 +1,45 @@
+:root {
+  --primary-dark: rgb(27, 38, 60);
+  --primary: rgb(42, 167, 223);
+  --secondary: rgb(163, 204, 57);
+  --red: rgb(219, 0, 0);
+  --yellow: rgb(255, 167, 0);
+  --green: rgb(0, 181, 70);
+  --white: rgb(255, 255, 255);
+  --gray-lighter: rgb(242, 242, 242);
+  --gray-light: rgb(216, 216, 216);
+  --gray: rgb(208, 208, 208);
+  --gray-dark: rgb(109, 109, 109);
+  --gray-darker: rgb(59, 59, 59);
+  --black: rgb(0, 0, 0);
+}
+
+$alphas: 10, 20, 30, 40, 50, 60, 70, 80, 90;
+
+@each $alpha in $alphas {
+  :root {
+    --primary-dark-alpha-#{$alpha}: rgb(27, 38, 60, calc(#{$alpha} / 100));
+    --primary-alpha-#{$alpha}: rgba(42, 167, 223, calc(#{$alpha} / 100));
+    --secondary-alpha-#{$alpha}: rgba(163, 204, 57, calc(#{$alpha} / 100));
+    --yellow-alpha-#{$alpha}: rgba(255, 167, 0, calc(#{$alpha} / 100));
+    --red-alpha-#{$alpha}: rgba(219, 0, 0, calc(#{$alpha} / 100));
+    --green-alpha-#{$alpha}: rgba(0, 181, 70, calc(#{$alpha} / 100));
+    --white-alpha-#{$alpha}: rgba(255, 255, 255, calc(#{$alpha} / 100));
+    --gray-lighter-alpha-#{$alpha}: rgba(242, 242, 242, calc(#{$alpha} / 100));
+    --gray-light-alpha-#{$alpha}: rgba(216, 216, 216, calc(#{$alpha} / 100));
+    --gray-alpha-#{$alpha}: rgba(208, 208, 208, calc(#{$alpha} / 100));
+    --gray-dark-alpha-#{$alpha}: rgba(109, 109, 109, calc(#{$alpha} / 100));
+    --gray-darker-alpha-#{$alpha}: rgba(59, 59, 59, calc(#{$alpha} / 100));
+    --black-alpha-#{$alpha}: rgba(0, 0, 0, calc(#{$alpha} / 100));
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+
+  &:hover {
+    color: var(--secondary);
+  }
+}
