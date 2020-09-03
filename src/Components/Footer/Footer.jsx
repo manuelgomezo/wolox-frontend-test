@@ -10,6 +10,7 @@ const Footer = () => {
     <div className="footer">
       <div class="footer-background">
         <div class="footer-background__image" />
+        <div class="footer-background__image footer-background__image--delay" />
       </div>
 
       <div className="footer__logo">

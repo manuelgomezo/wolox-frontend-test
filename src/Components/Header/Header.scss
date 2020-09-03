@@ -59,7 +59,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   overflow: hidden;
   z-index: -1;
 
@@ -75,9 +75,23 @@
   }
 
   &__image {
-    height: 120vh;
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
     background-image: url(https://s3.amazonaws.com/cdn.wolox.com/images/background_header.png);
-    background-repeat: repeat-y;
-    animation: bgAnimationIn 20s linear infinite;
+    background-repeat: repeat;
+    background-size: cover;
+    animation: bgAnimationIn 30s linear infinite;
+    animation-delay: 0s;
+
+    &--delay {
+      opacity: 0;
+      animation-delay: 10s;
+    }
+
+    &--delay2 {
+      opacity: 0;
+      animation-delay: 20s;
+    }
   }
 }

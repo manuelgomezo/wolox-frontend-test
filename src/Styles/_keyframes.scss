@@ -26,23 +26,29 @@
 }
 
 @keyframes bgAnimationIn {
-  from {
-    transform: translateX(0);
-    transform: translateY(0);
+  0% {
+    opacity: 1;
+    transform: translate(-100%, 50%) rotate(0deg);
   }
-  to {
-    transform: translateX(-100%);
-    transform: translateY(-50%);
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(80%, -50%) rotate(-45deg);
   }
 }
 
 @keyframes bgAnimationOut {
-  from {
-    transform: translateX(-100%);
-    transform: translateY(-50%);
+  0% {
+    opacity: 1;
+    transform: translate(100%, -100%) rotate(0deg);
   }
-  to {
-    transform: translateX(0);
-    transform: translateY(0);
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-30%, 0) rotate(15deg);
   }
 }

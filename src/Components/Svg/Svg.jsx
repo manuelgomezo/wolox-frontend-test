@@ -47,6 +47,9 @@ const Svg = ({ id }) => {
           </g>
         </svg>
       );
+
+    default:
+      return <></>;
   }
 };
 
