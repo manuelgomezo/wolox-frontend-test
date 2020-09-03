@@ -1,0 +1,10 @@
+@import '../../Styles/mixins';
+
+.home {
+  margin: 0 auto;
+  padding: 1em;
+
+  @include from-tablet {
+    padding: 1em 3em;
+  }
+}

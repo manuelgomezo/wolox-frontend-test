@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import MenuData from './MenuData';
@@ -7,6 +7,14 @@ import './Menu.scss';
 const Menu = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState();
+
+  useEffect(() => {
+    if (open) {
+      document.querySelector('body').classList.add('no-scroll');
+    } else {
+      document.querySelector('body').classList.remove('no-scroll');
+    }
+  }, [open]);
 
   const handleButton = (title) => {
     switch (title) {
@@ -26,17 +34,17 @@ const Menu = () => {
       </div>
 
       <ul className="menu__wrapper">
-        {MenuData.map((item) => {
+        {MenuData.map((item, index) => {
           switch (item.type) {
             case 'button':
               return (
-                <li className="menu__item menu__item--button">
+                <li key={`menu.button${index}`} className="menu__item menu__item--button">
                   <button onClick={() => handleButton(item.title)}>{t(item.title)}</button>
                 </li>
               );
             default:
               return (
-                <li className={`menu__item ${item.class ? item.class : ''}`}>
+                <li key={`menu.link${index}`} className={`menu__item ${item.class ? item.class : ''}`}>
                   <a href={item.link}>{t(item.title)}</a>
                 </li>
               );

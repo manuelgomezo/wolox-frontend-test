@@ -3,5 +3,10 @@
   "menu.technologies": "Tecnologías",
   "menu.benefits": "Beneficios",
   "menu.requirements": "Requerimientos",
-  "menu.login": "Login"
+  "menu.login": "Login",
+  "hero.welcomeTitle": "Bienvenido a tu prueba",
+  "hero.welcome": "<div>Bienvenido a tu </div><div><strong>Entrevista Técnica</strong> en</div><h6>Wolox</h6>",
+  "hero.lookingforTitle": "Estamos buscando",
+  "hero.lookingfor": "Estamos buscando<p>para incorporar gente</p>increíble para estas<p>tecnologías:</p>",
+  "hero.thanks": "<div className='text-align-center'><div className='text-bold'>Gracias por <span className='text-primary'>completar el ejercicio</span></div><div className='hero__subtitle'>Te invitamos a ver mas información</div><button className='primary-button'>Conocer más</button></div>"
 }

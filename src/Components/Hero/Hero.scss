@@ -1,0 +1,83 @@
+@import '../../Styles/mixins';
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 1em;
+  width: 100%;
+  max-width: 100%;
+  min-height: 25vh;
+  flex-wrap: wrap;
+  margin: auto;
+
+  @include from-tablet {
+    max-width: 60em;
+    justify-content: space-between;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--content-full {
+    .hero__content {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__content {
+    flex-basis: 100%;
+    max-width: 100%;
+    font-size: 1.6em;
+    line-height: 1em;
+    text-align: center;
+
+    @include from-tablet {
+      text-align: left;
+      flex-basis: calc(100% / 3 * 2);
+      max-width: calc(100% / 3 * 2);
+      font-size: 2.5em;
+      line-height: 1.1em;
+    }
+
+    strong {
+      font-weight: 900;
+    }
+
+    h6 {
+      color: var(--secondary);
+      font-weight: 900;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.8em;
+  }
+
+  &__image {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 1em;
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 30em;
+      animation: zoom 5s linear infinite;
+    }
+
+    @include from-tablet {
+      padding: 1em;
+      flex-basis: calc(100% / 3);
+      max-width: calc(100% / 3);
+    }
+  }
+}
+
+.flip-image {
+  .hero__image {
+    transform: scaleX(-1);
+  }
+}

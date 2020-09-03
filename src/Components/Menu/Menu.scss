@@ -5,9 +5,9 @@
 
   &--active {
     .menu__wrapper {
-      position: absolute;
-      background: var(--secondary-alpha-90);
-      max-height: 100vh;
+      position: fixed;
+      background: var(--secondary-alpha-95);
+      max-height: 100%;
       padding: 10vh 1vw;
       top: 0;
       height: 100%;
@@ -19,6 +19,12 @@
         background: none;
         padding: 0;
       }
+    }
+
+    .menu__icon {
+      position: fixed;
+      top: 7vh;
+      height: auto;
     }
   }
 
@@ -119,7 +125,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: 900;
     color: var(--white);
     text-decoration: none;
     transition: all 0.2s ease;

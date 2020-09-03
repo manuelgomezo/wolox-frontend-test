@@ -7,10 +7,18 @@
 body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   color: var(--primary-dark);
+  position: relative;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+  @include from-tablet {
+    overflow-y: initial;
+  }
 }
 
 .max-width {
-  max-width: 1440px;
+  max-width: 1200px;
 }
 
 .noDesktop {

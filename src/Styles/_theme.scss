@@ -14,7 +14,7 @@
   --black: rgb(0, 0, 0);
 }
 
-$alphas: 10, 20, 30, 40, 50, 60, 70, 80, 90;
+$alphas: 10, 20, 30, 40, 50, 60, 70, 80, 90, 95;
 
 @each $alpha in $alphas {
   :root {
@@ -41,5 +41,60 @@ a {
 
   &:hover {
     color: var(--secondary);
+  }
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-bold {
+  font-weight: 900;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.primary-button {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 900;
+  padding: 1em 5em;
+  border-radius: 3em;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  margin: 1em auto;
+
+  @include from-tablet {
+    transform: scale(0.95);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, var(--secondary) 50%, transparent 50%);
+    border-radius: 3em;
+    z-index: -1;
+  }
+
+  &,
+  &:after {
+    background-size: 300%;
+    background-position: 100%;
+    transition: all 1s ease;
+  }
+
+  &:hover,
+  &:hover:after {
+    background-position: 0;
+    color: var(--white);
+    transform: scale(1);
   }
 }

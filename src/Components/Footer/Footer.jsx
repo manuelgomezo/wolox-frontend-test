@@ -8,13 +8,13 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <div class="footer-background">
-        <div class="footer-background__image" />
-        <div class="footer-background__image footer-background__image--delay" />
+      <div className="footer-background">
+        <div className="footer-background__image" />
+        <div className="footer-background__image footer-background__image--delay" />
       </div>
 
       <div className="footer__logo">
-        <img src={config.IMAGE_PROVIDER + 'icons/Ic_wolox_footer.svg'} alt="WOLOX" />
+        <img src={config.IMAGE_PROVIDER + 'icons/ic_wolox_footer.svg'} alt="WOLOX" />
       </div>
 
       <div className="footer__locales">
