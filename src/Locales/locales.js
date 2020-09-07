@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import esLocale from './langs/es.json';
-import enLocale from './langs/en.json';
+import esLocale from './es/common';
+import enLocale from './en/common';
 
 i18n.use(LanguageDetector).init({
   resources: {

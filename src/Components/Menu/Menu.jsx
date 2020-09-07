@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import MenuData from './MenuData';
+import config from 'config';
 import './Menu.scss';
 
 const Menu = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState();
 
   useEffect(() => {
@@ -50,6 +51,14 @@ const Menu = () => {
               );
           }
         })}
+        <li className="menu__item menu__item--locales">
+          <button onClick={() => i18n.changeLanguage('es')}>
+            <img src={config.IMAGE_PROVIDER + 'images/es.png'} alt="WOLOX ES Locale" />
+          </button>
+          <button onClick={() => i18n.changeLanguage('en')}>
+            <img src={config.IMAGE_PROVIDER + 'images/en.png'} alt="WOLOX EN Locale" />
+          </button>
+        </li>
       </ul>
     </div>
   );

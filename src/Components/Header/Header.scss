@@ -24,7 +24,7 @@
     padding: 1em 0.5em;
     text-align: center;
     transform: translateY(0);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     cursor: pointer;
 
     &:hover {
@@ -34,7 +34,7 @@
     svg {
       width: 15em;
       max-width: 100%;
-      animation: zoomIn 1s ease;
+      animation: zoomIn 2s ease;
     }
 
     @include from-tablet {

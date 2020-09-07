@@ -2,9 +2,25 @@
 
 .home {
   margin: 0 auto;
-  padding: 1em;
+  padding: 1em 1em 0 1em;
 
   @include from-tablet {
-    padding: 1em 3em;
+    padding: 1em 3em 0 3em;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 2vh 1vw;
+  }
+
+  .benefits {
+    width: 100%;
+    text-align: center;
+    padding: 2em 0;
+
+    @include from-desktop {
+      padding: 2em 4em;
+    }
   }
 }

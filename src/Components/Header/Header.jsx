@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Svg, Menu } from 'Components';
 import './Header.scss';
 
@@ -11,9 +12,9 @@ const Header = () => {
         <div className="header-background__image header-background__image--delay2" />
       </div>
       <div className="header__container max-width">
-        <a href="/" className="header__logo">
+        <Link to="/" className="header__logo">
           <Svg id="logo" />
-        </a>
+        </Link>
         <div className="header__menu">
           <Menu />
         </div>

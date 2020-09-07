@@ -10,8 +10,6 @@ const Hero = ({ images, type, alt, title, className, children }) => {
     else return config.IMAGE_PROVIDER + 'images/';
   };
 
-  console.log(title);
-
   return (
     <div className={classnames('hero', className && [...className])}>
       <div className="hero__content">

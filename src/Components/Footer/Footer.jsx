@@ -11,6 +11,7 @@ const Footer = () => {
       <div className="footer-background">
         <div className="footer-background__image" />
         <div className="footer-background__image footer-background__image--delay" />
+        <div className="footer-background__image footer-background__image--delay2" />
       </div>
 
       <div className="footer__logo">
