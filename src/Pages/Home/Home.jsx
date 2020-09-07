@@ -7,7 +7,7 @@ import './Home.scss';
 
 const renderHero = (key, id, data) => (
   <section id={id} key={key}>
-    <Hero images={data.images} type={data.type} className={data.classnames} alt={data.title}>
+    <Hero images={data.images} type={data.type} className={data.classnames} title={data.title}>
       {data.content}
     </Hero>
   </section>

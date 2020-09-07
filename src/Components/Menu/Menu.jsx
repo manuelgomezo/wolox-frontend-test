@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
-import MenuData from './MenuData';
 import config from 'config';
+import MenuData from './MenuData.json';
 import './Menu.scss';
 
 const Menu = () => {
@@ -17,12 +17,7 @@ const Menu = () => {
     }
   }, [open]);
 
-  const handleButton = (title) => {
-    switch (title) {
-      default:
-        return;
-    }
-  };
+  const handleButton = () => {};
 
   return (
     <div className={classnames('menu', { 'menu--active': open })}>
@@ -40,7 +35,9 @@ const Menu = () => {
             case 'button':
               return (
                 <li key={`menu.button${index}`} className="menu__item menu__item--button">
-                  <button onClick={() => handleButton(item.title)}>{t(item.title)}</button>
+                  <button type="button" onClick={() => handleButton(item.title)}>
+                    {t(item.title)}
+                  </button>
                 </li>
               );
             default:
@@ -52,11 +49,11 @@ const Menu = () => {
           }
         })}
         <li className="menu__item menu__item--locales">
-          <button onClick={() => i18n.changeLanguage('es')}>
-            <img src={config.IMAGE_PROVIDER + 'images/es.png'} alt="WOLOX ES Locale" />
+          <button type="button" onClick={() => i18n.changeLanguage('es')}>
+            <img src={`${config.IMAGE_PROVIDER}images/es.png`} alt="WOLOX ES Locale" />
           </button>
-          <button onClick={() => i18n.changeLanguage('en')}>
-            <img src={config.IMAGE_PROVIDER + 'images/en.png'} alt="WOLOX EN Locale" />
+          <button type="button" onClick={() => i18n.changeLanguage('en')}>
+            <img src={`${config.IMAGE_PROVIDER}images/en.png`} alt="WOLOX EN Locale" />
           </button>
         </li>
       </ul>

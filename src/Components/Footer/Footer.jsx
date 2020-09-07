@@ -15,15 +15,15 @@ const Footer = () => {
       </div>
 
       <div className="footer__logo">
-        <img src={config.IMAGE_PROVIDER + 'icons/ic_wolox_footer.svg'} alt="WOLOX" />
+        <img src={`${config.IMAGE_PROVIDER}icons/ic_wolox_footer.svg`} alt="WOLOX" />
       </div>
 
       <div className="footer__locales">
-        <button onClick={() => i18n.changeLanguage('es')}>
-          <img src={config.IMAGE_PROVIDER + 'images/es.png'} alt="WOLOX ES Locale" />
+        <button type="button" onClick={() => i18n.changeLanguage('es')}>
+          <img src={`${config.IMAGE_PROVIDER}images/es.png`} alt="WOLOX ES Locale" />
         </button>
-        <button onClick={() => i18n.changeLanguage('en')}>
-          <img src={config.IMAGE_PROVIDER + 'images/en.png'} alt="WOLOX EN Locale" />
+        <button type="button" onClick={() => i18n.changeLanguage('en')}>
+          <img src={`${config.IMAGE_PROVIDER}images/en.png`} alt="WOLOX EN Locale" />
         </button>
       </div>
     </div>

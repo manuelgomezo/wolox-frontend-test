@@ -4,10 +4,10 @@ import classnames from 'classnames';
 import config from 'config';
 import './Hero.scss';
 
-const Hero = ({ images, type, alt, title, className, children }) => {
-  const getSrc = (link, srcType) => {
-    if (type === 'icon') return config.IMAGE_PROVIDER + 'icons/';
-    else return config.IMAGE_PROVIDER + 'images/';
+const Hero = ({ images, type, title, className, children }) => {
+  const getSrc = (srcType) => {
+    if (srcType === 'icon') return `${config.IMAGE_PROVIDER}icons/`;
+    return `${config.IMAGE_PROVIDER}images/`;
   };
 
   return (
@@ -17,7 +17,7 @@ const Hero = ({ images, type, alt, title, className, children }) => {
       </div>
       {images && (
         <div className="hero__image">
-          <img src={getSrc(images[0], type) + images[0].src} alt={alt} />
+          <img src={getSrc(type) + images[0].src} alt={title} />
         </div>
       )}
     </div>
