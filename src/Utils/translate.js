@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+
 const TRANSLEABLE_KEYS = ['content', 'title'];
 
 const doTranslate = (t, data) => {
@@ -11,8 +14,8 @@ const doTranslate = (t, data) => {
 };
 
 const getTranslatedFile = (lang, file) => {
-  const content = require(`Locales/${lang}/${file}`).default;
-  return content;
+  if (lang === 'en') return require(`Locales/en/${file}`).default;
+  return require(`Locales/es/${file}`).default;
 };
 
 export { doTranslate, getTranslatedFile };
