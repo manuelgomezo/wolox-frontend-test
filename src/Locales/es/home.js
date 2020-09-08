@@ -10,14 +10,14 @@ export default [
                 <span class='text-secondary text-bold'>Wolox</span></h3>`,
       classnames: ['flip-image'],
       images: [
-        { src: 'ic_ilustra_hero.png' },
+        { src: 'ic_ilustra_hero.png', size: '500w' },
         {
           src: 'ic_ilustra_hero@2x.png',
-          size: '800vw',
+          size: '800w',
         },
         {
           src: 'ic_ilustra_hero@3x.png',
-          size: '1200vw',
+          size: '1200w',
         },
       ],
     },

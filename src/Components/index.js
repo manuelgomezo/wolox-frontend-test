@@ -5,3 +5,4 @@ export { default as Portal } from './Portal/Portal';
 export { default as Svg } from './Svg/Svg';
 export { default as Hero } from './Hero/Hero';
 export { default as TwoColumns } from './TwoColumns/TwoColumns';
+export { default as RouteComponent } from './RouteComponent/RouteComponent';

@@ -25,7 +25,7 @@ const renderFullWidth = (key, id, data) => (
   </section>
 );
 
-const renderSeparator = () => <div className="separator" />;
+const renderSeparator = (key) => <div key={key} className="separator" />;
 
 const Home = () => {
   const { i18n } = useTranslation();
@@ -44,7 +44,7 @@ const Home = () => {
           if (item.type === 'hero') return renderHero(sectionID, item.id, item.data);
           if (item.type === 'two-columns') return renderTwoColumns(sectionID, item.id, item.data);
           if (item.type === 'fullwidth') return renderFullWidth(sectionID, item.id, item.data);
-          if (item.type === 'separator') return renderSeparator();
+          if (item.type === 'separator') return renderSeparator(sectionID);
           return <></>;
         })}
     </div>

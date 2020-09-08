@@ -2,27 +2,30 @@
   {
     "title": "menu.home",
     "type": "link",
-    "link": "#"
+    "link": "/"
   },
   {
     "title": "menu.technologies",
-    "type": "link",
-    "link": "#"
+    "type": "anchor",
+    "link": "/",
+    "hash": "technologies"
   },
   {
     "title": "menu.benefits",
-    "type": "link",
-    "link": "#"
+    "type": "anchor",
+    "link": "/",
+    "hash": "benefits"
   },
   {
     "title": "menu.requirements",
-    "type": "link",
-    "link": "#"
+    "type": "anchor",
+    "link": "/",
+    "hash": "requirements"
   },
   {
-    "title": "menu.login",
-    "class": "menu__item--login",
+    "title": "menu.techlist",
     "type": "link",
-    "link": "#"
+    "restricted": true,
+    "link": "/techlist"
   }
 ]

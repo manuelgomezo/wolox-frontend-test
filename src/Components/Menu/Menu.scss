@@ -103,7 +103,7 @@
       transform: scale(0.95);
     }
 
-    @include for-large-desktop {
+    @include from-large-desktop {
       padding: 0.8em 5em;
     }
 
@@ -169,11 +169,15 @@
 
     @include from-tablet {
       margin: 0;
-      padding: 0.8em 0.5em;
-      transform: scale(0.95);
+      padding: 0.8em 0.15em;
+      transform: scale(0.9);
       justify-content: center;
       height: 100%;
       color: var(--primary-dark);
+    }
+
+    @include from-large-desktop {
+      padding: 0.8em 0.5em;
     }
 
     &:hover {

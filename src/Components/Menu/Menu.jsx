@@ -1,11 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
+import { doTranslate } from 'Utils/translate';
 import config from 'config';
-import MenuData from './MenuData.json';
 import './Menu.scss';
 
-const Menu = () => {
+// Contexts
+import { UserContext } from 'Contexts/UserContext';
+
+import MenuData from './MenuData.json';
+
+const printMenuItem = (item, index, auth) => {
+  if (!item.restricted || (item.restricted && auth)) {
+    switch (item.type) {
+      case 'anchor':
+        return (
+          <li key={`menu.link${item.title}`} className={`menu__item ${item.class ? item.class : ''}`}>
+            <Link to={{ pathname: item.link, hash: item.hash }}>{item.title}</Link>
+          </li>
+        );
+      default:
+        return (
+          <li key={`menu.link_${item.title}`} className={`menu__item ${item.class ? item.class : ''}`}>
+            <Link to={item.link}>{item.title}</Link>
+          </li>
+        );
+    }
+  }
+  return <></>;
+};
+
+const Menu = ({ location }) => {
+  const { auth, logout } = useContext(UserContext);
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState();
 
@@ -17,7 +44,9 @@ const Menu = () => {
     }
   }, [open]);
 
-  const handleButton = () => {};
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <div className={classnames('menu', { 'menu--active': open })}>
@@ -31,24 +60,23 @@ const Menu = () => {
 
       <ul className="menu__wrapper">
         {MenuData.map((item, index) => {
-          switch (item.type) {
-            case 'button':
-              return (
-                <li key={`menu.button${index}`} className="menu__item menu__item--button">
-                  <button type="button" onClick={() => handleButton(item.title)}>
-                    {t(item.title)}
-                  </button>
-                </li>
-              );
-            default:
-              return (
-                <li key={`menu.link${index}`} className={`menu__item ${item.class ? item.class : ''}`}>
-                  <a href={item.link}>{t(item.title)}</a>
-                </li>
-              );
-          }
+          const translatedItem = doTranslate(t, item);
+          return printMenuItem(translatedItem, index, auth);
         })}
-        <li className="menu__item menu__item--locales">
+
+        {auth ? (
+          <li key="menu.item__logout" className="menu__item menu__item--login">
+            <button type="button" onClick={() => logout()}>
+              {t('menu.logout')}
+            </button>
+          </li>
+        ) : (
+          <li key="menu.item__login" className="menu__item menu__item--login">
+            <Link to="/login">{t('menu.login')}</Link>
+          </li>
+        )}
+
+        <li key="menu.item__locales" className="menu__item menu__item--locales">
           <button type="button" onClick={() => i18n.changeLanguage('es')}>
             <img src={`${config.IMAGE_PROVIDER}images/es.png`} alt="WOLOX ES Locale" />
           </button>
@@ -61,4 +89,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default withRouter(Menu);
