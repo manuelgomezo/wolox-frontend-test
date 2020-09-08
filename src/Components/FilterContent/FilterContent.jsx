@@ -24,10 +24,10 @@ const FilterContent = ({ data, filtered, setFiltered, fields }) => {
     if (type === 'asc') {
       return newData.sort((a, b) => {
         if (a[key].toLowerCase() < b[key].toLowerCase()) {
-          return -1;
+          return 1;
         }
         if (a[key].toLowerCase() > b[key].toLowerCase()) {
-          return 1;
+          return -1;
         }
         return 0;
       });
@@ -35,10 +35,10 @@ const FilterContent = ({ data, filtered, setFiltered, fields }) => {
     if (type === 'desc') {
       return newData.sort((a, b) => {
         if (a[key].toLowerCase() < b[key].toLowerCase()) {
-          return 1;
+          return -1;
         }
         if (a[key].toLowerCase() > b[key].toLowerCase()) {
-          return -1;
+          return 1;
         }
         return 0;
       });
@@ -62,10 +62,10 @@ const FilterContent = ({ data, filtered, setFiltered, fields }) => {
       <div className="filter-content__item">
         <select className="input" onChange={(e) => setFiltered(sortData(filtered, e.currentTarget.value, 'tech'))}>
           <option disabled selected>
-            Ordenar por:
+            {t('filter.sort')}
           </option>
-          <option value="asc">Ordenar ascendentemente</option>
-          <option value="desc">Ordenar descendentemente</option>
+          <option value="desc">{t('filter.abc')}</option>
+          <option value="asc">{t('filter.cba')}</option>
         </select>
       </div>
     </div>

@@ -45,7 +45,7 @@
     align-items: center;
     flex-wrap: wrap;
     background: var(--gray-alpha-20);
-    border-radius: 3em;
+    border-radius: 2em;
 
     &:hover {
       background: var(--primary-dark);
@@ -54,7 +54,7 @@
   }
 
   &__content {
-    padding: 1em;
+    padding: 1.5em 2em;
 
     h2 {
       font-weight: 900;
@@ -73,7 +73,7 @@
     padding: 2em;
     background: var(--white);
     border: 1px solid var(--gray-light);
-    border-radius: 2.5em;
+    border-radius: 1.5em;
     height: 100%;
 
     img {

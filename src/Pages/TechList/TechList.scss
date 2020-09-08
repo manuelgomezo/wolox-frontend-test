@@ -2,6 +2,7 @@
 
 .tech-list {
   margin: 1em auto;
+  animation: fadeIn 0.5s ease 1 both;
 
   &__container {
     display: flex;
