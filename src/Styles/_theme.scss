@@ -295,3 +295,18 @@ button.button--outline {
     }
   }
 }
+
+.input {
+  padding: 1em;
+  border-radius: 1em;
+  margin: 0.5em;
+  border: 1px solid var(--gray);
+
+  &::placeholder {
+    color: var(--gray);
+  }
+
+  &:focus {
+    border-color: var(--primary);
+  }
+}

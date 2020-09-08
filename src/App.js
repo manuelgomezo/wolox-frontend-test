@@ -20,10 +20,14 @@ function App({ location }) {
       const element = document.querySelector(hash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const headerOffset = 60;
+          const elementPosition = element.offsetTop - headerOffset;
+          window.scrollTo({ top: elementPosition, behavior: 'smooth' });
         }, 150);
         return true;
       }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return true;
     }
     return false;
   };

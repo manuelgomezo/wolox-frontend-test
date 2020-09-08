@@ -1,9 +1,27 @@
 @import '../../Styles/mixins';
 
 .header {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+
+  &--sticky {
+    background: var(--white);
+    box-shadow: 0 0 1em var(--black-alpha-20);
+    z-index: 100;
+
+    .header__logo {
+      padding: 0;
+
+      svg {
+        width: auto;
+        height: 1em;
+      }
+    }
+  }
 
   &__container {
     display: flex;
@@ -35,6 +53,7 @@
       width: 15em;
       max-width: 100%;
       animation: zoomIn 2s ease;
+      transition: all 0.5s ease;
     }
 
     @include from-tablet {

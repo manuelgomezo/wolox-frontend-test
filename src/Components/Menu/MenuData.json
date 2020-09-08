@@ -1,8 +1,9 @@
 [
   {
     "title": "menu.home",
-    "type": "link",
-    "link": "/"
+    "type": "anchor",
+    "link": "/",
+    "hash": "top"
   },
   {
     "title": "menu.technologies",
