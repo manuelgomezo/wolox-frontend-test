@@ -28,7 +28,7 @@ const printMenuItem = (item, index, auth) => {
         );
     }
   }
-  return <></>;
+  return null;
 };
 
 const Menu = ({ location }) => {
@@ -77,10 +77,10 @@ const Menu = ({ location }) => {
         )}
 
         <li key="menu.item__locales" className="menu__item menu__item--locales">
-          <button type="button" onClick={() => i18n.changeLanguage('es')}>
+          <button key="menu.item__locales__es" type="button" onClick={() => i18n.changeLanguage('es')}>
             <img src={`${config.IMAGE_PROVIDER}images/es.png`} alt="WOLOX ES Locale" />
           </button>
-          <button type="button" onClick={() => i18n.changeLanguage('en')}>
+          <button key="menu.item__locales__en" type="button" onClick={() => i18n.changeLanguage('en')}>
             <img src={`${config.IMAGE_PROVIDER}images/en.png`} alt="WOLOX EN Locale" />
           </button>
         </li>

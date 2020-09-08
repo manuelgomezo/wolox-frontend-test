@@ -5,25 +5,33 @@ import classnames from 'classnames';
 import config from 'config';
 import './TwoColumns.scss';
 
+const BackgroundLeftDiv = styled.div`
+  ${(props) => props.backgroundImage && `background: url(${`${config.IMAGE_PROVIDER}images/${props.backgroundImage}`});`}
+  ${(props) => props.backgroundColor && `background-color: ${props.backgroundColor};`}
+`;
+
+const BackgroundRightDiv = styled.div`
+  ${(props) => props.backgroundImage && `background: url(${`${config.IMAGE_PROVIDER}images/${props.backgroundImage}`});`}
+  ${(props) => props.backgroundColor && `background-color: ${props.backgroundColor};`}
+`;
+
 const TwoColumns = ({ data }) => {
-  const BackgroundLeftDiv = styled.div`
-    ${data.left.backgroundImage && `background: url(${`${config.IMAGE_PROVIDER}images/${data.left.backgroundImage}`});`}
-    ${data.left.backgroundColor && `background-color: ${data.left.backgroundColor};`}
-  `;
-
-  const BackgroundRightDiv = styled.div`
-    ${data.right.backgroundImage && `background: url(${`${config.IMAGE_PROVIDER}images/${data.right.backgroundImage}`});`}
-    ${data.right.backgroundColor && `background-color: ${data.right.backgroundColor};`}
-  `;
-
   return (
     <div className="two-columns">
       <div className={classnames('two-columns__column two-columns__left', data.left.class && data.left.class)}>
-        <BackgroundLeftDiv className="two-columns__column__background" />
+        <BackgroundLeftDiv
+          className="two-columns__column__background"
+          backgroundImage={data.left.backgroundImage}
+          backgroundColor={data.left.backgroundColor}
+        />
         <ReactMarkdown source={data.left.content} escapeHtml={false} />
       </div>
       <div className={classnames('two-columns__column two-columns__right', data.right.class && data.right.class)}>
-        <BackgroundRightDiv className="two-columns__column__background" />
+        <BackgroundRightDiv
+          className="two-columns__column__background"
+          backgroundImage={data.right.backgroundImage}
+          backgroundColor={data.right.backgroundColor}
+        />
         <ReactMarkdown source={data.right.content} escapeHtml={false} />
       </div>
     </div>

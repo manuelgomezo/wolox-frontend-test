@@ -1,8 +1,11 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useContext, Suspense, lazy } from 'react';
 import { withRouter, Switch } from 'react-router-dom';
 
 // Components
 import { Header, Footer, Portal, RouteComponent } from 'Components';
+
+// Contexts
+import { UserContext } from 'Contexts/UserContext';
 
 import 'Styles/main.scss';
 
@@ -11,7 +14,8 @@ const Home = lazy(() => import('Pages/Home/Home'));
 const Login = lazy(() => import('Pages/Login/Login'));
 const TechList = lazy(() => import('Pages/TechList/TechList'));
 
-function App({ location }) {
+function App({ location, history }) {
+  const { auth } = useContext(UserContext);
   const [showHeader, setShowHeader] = useState(true);
   const [showFooter, setShowFooter] = useState(true);
 
@@ -39,6 +43,10 @@ function App({ location }) {
       }, 50);
     }
   }, [location]);
+
+  useEffect(() => {
+    if (auth) history.push('/techlist');
+  }, []);
 
   return (
     <div className="app">

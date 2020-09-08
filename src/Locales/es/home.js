@@ -56,9 +56,9 @@ export default [
                     </button>
                   </div>
                   <div>
-                    <button class="button button--primary button--outline">
+                    <a class="button button--primary button--outline" target="_blank" href="https://twitter.com/Wolox">
                       <span>Síguenos</span>
-                    </button>
+                    </a>
                   </div>`,
       },
       right: {
@@ -114,9 +114,9 @@ export default [
       content: `<div class="text-align-center">
                   <h3 class="bold">Gracias por <span class="text-primary">completar el ejercicio</span></h3>
                   <h4 class="hero__subtitle">Te invitamos a ver mas información</h4>
-                  <button class="button button--primary">
+                  <a class="button button--primary" target="_blank" href="https://www.wolox.com.ar/">
                     <span>Conocer más</span>
-                  </button>
+                  </a>
                 </div>`,
     },
   },

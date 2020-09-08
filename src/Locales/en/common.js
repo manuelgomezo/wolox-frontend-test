@@ -14,6 +14,7 @@ const common = {
   'login.keeplogin': 'Stay signed in',
   'login.required': 'This field is required',
   'login.error': 'There has been an unexpected error',
+  'footer.copy': 'CRAFTED WITH LOVE ❤ BY MANUEL GOMEZ',
 };
 
 export default common;

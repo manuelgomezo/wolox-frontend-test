@@ -4,7 +4,7 @@ import config from 'config';
 import './Footer.scss';
 
 const Footer = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="footer">
@@ -26,6 +26,8 @@ const Footer = () => {
           <img src={`${config.IMAGE_PROVIDER}images/en.png`} alt="WOLOX EN Locale" />
         </button>
       </div>
+
+      <div className="footer__copy">{t('footer.copy')}</div>
     </div>
   );
 };

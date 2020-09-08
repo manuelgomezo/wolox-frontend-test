@@ -7,7 +7,7 @@ const RouteComponent = ({ component: Page, restricted, location, ...rest }) => {
   const { auth } = useContext(UserContext);
 
   if (auth && rest.path === '/login')
-    return <Route {...rest} render={(props) => <Redirect to={{ pathname: '/', state: { from: props.location } }} />} />;
+    return <Route {...rest} render={(props) => <Redirect to={{ pathname: '/techlist', state: { from: props.location } }} />} />;
 
   if (restricted)
     return (
