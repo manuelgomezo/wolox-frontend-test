@@ -9,6 +9,9 @@ import i18n from 'Locales/locales';
 // Context
 import UserContextContainer from 'Contexts/UserContext';
 
+// Components
+import { ErrorBoundary } from 'Components';
+
 // Main APP Component
 import App from './App';
 
@@ -19,7 +22,9 @@ ReactDOM.render(
     <I18nextProvider i18n={i18n}>
       <UserContextContainer>
         <BrowserRouter>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </BrowserRouter>
       </UserContextContainer>
     </I18nextProvider>

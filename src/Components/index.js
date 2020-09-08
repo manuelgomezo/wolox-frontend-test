@@ -6,3 +6,4 @@ export { default as Svg } from './Svg/Svg';
 export { default as Hero } from './Hero/Hero';
 export { default as TwoColumns } from './TwoColumns/TwoColumns';
 export { default as RouteComponent } from './RouteComponent/RouteComponent';
+export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
