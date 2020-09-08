@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, Suspense, lazy } from 'react';
-import { withRouter, Switch } from 'react-router-dom';
+import { Switch, useHistory, useLocation } from 'react-router-dom';
 
 // Components
 import { Header, Footer, Portal, RouteComponent } from 'Components';
@@ -14,8 +14,10 @@ const Home = lazy(() => import('Pages/Home/Home'));
 const Login = lazy(() => import('Pages/Login/Login'));
 const TechList = lazy(() => import('Pages/TechList/TechList'));
 
-function App({ location, history }) {
+function App() {
   const { auth } = useContext(UserContext);
+  const history = useHistory();
+  const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
   const [showFooter, setShowFooter] = useState(true);
 
@@ -71,4 +73,4 @@ function App({ location, history }) {
   );
 }
 
-export default withRouter(App);
+export default App;

@@ -21,11 +21,11 @@ ReactDOM.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
       <UserContextContainer>
-        <BrowserRouter>
-          <ErrorBoundary>
+        <ErrorBoundary>
+          <BrowserRouter>
             <App />
-          </ErrorBoundary>
-        </BrowserRouter>
+          </BrowserRouter>
+        </ErrorBoundary>
       </UserContextContainer>
     </I18nextProvider>
   </React.StrictMode>,

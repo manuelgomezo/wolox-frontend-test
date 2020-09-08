@@ -17,7 +17,7 @@ const FilterContent = ({ data, filterDispatch, fields }) => {
   return (
     <div className="filter-content">
       <div className="filter-content__item">
-        <input value={search} placeholder={t('filter.search')} className="input" onChange={(e) => setSearch(e.currentTarget.value)} />
+        <input placeholder={t('filter.search')} className="input" value={search} onChange={(e) => setSearch(e.currentTarget.value)} />
       </div>
       <div className="filter-content__item">
         <select
@@ -25,7 +25,7 @@ const FilterContent = ({ data, filterDispatch, fields }) => {
           defaultValue="default"
           onChange={(e) => filterDispatch({ type: 'SORT', order: e.currentTarget.value, field: 'tech' })}
         >
-          <option value="default" disabled selected>
+          <option value="default" disabled>
             {t('filter.sort')}
           </option>
           <option value="desc">{t('filter.abc')}</option>
