@@ -49,6 +49,11 @@ h6 {
   }
 }
 
+h1 {
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
 h3 {
   font-size: 1.8em;
   line-height: 1em;
@@ -141,6 +146,16 @@ button.button--outline {
   &:hover,
   &:hover:after {
     color: var(--white);
+  }
+}
+
+button.button--loading,
+.button--loading:hover {
+  background: var(--gray-dark);
+  cursor: not-allowed;
+
+  &:after {
+    display: none;
   }
 }
 
@@ -299,7 +314,6 @@ button.button--outline {
 .input {
   padding: 1em;
   border-radius: 1em;
-  margin: 0.5em;
   border: 1px solid var(--gray);
 
   &::placeholder {
