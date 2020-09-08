@@ -12,9 +12,10 @@ import { UserContext } from 'Contexts/UserContext';
 
 import './LoginForm.scss';
 
+// Cancel token for LOGIN Request
+const controller = axios.CancelToken.source();
+
 const LoginForm = () => {
-  // Cancel token for LOGIN Request
-  const controller = axios.CancelToken.source();
   // Login CONTEXT service.
   const { login } = useContext(UserContext);
   // Translation service

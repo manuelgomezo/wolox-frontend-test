@@ -46,7 +46,7 @@ function App({ location, history }) {
 
   useEffect(() => {
     if (auth) history.push('/techlist');
-  }, []);
+  }, [auth, history]);
 
   return (
     <div className="app">

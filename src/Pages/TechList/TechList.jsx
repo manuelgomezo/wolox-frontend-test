@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import Wolox from 'Services/Wolox';
 import { Card, FilterContent } from 'Components';
+import { searchFilter, sortData } from 'Utils/arrays';
 
 import './TechList.scss';
 
@@ -37,16 +38,34 @@ const RenderCard = ({ className, data }) => {
   );
 };
 
+const filterReducer = (state, action) => {
+  let newData = [];
+  switch (action.type) {
+    case 'FILTER_TEXT':
+      newData = searchFilter([...action.data], action.keyword, action.fields);
+      return newData;
+    case 'SET_DATA':
+      return [...action.data];
+    case 'SORT':
+      newData = sortData([...state], action.order, action.field);
+      return newData;
+    default:
+      throw new Error();
+  }
+};
+
+// Cancel token for LOGIN Request
+const controller = axios.CancelToken.source();
+const SEARCH_FIELDS = ['tech', 'type'];
+
 const TechList = () => {
-  // Cancel token for LIST Request
-  const controller = axios.CancelToken.source();
   // Translate service hook
   const { t } = useTranslation();
 
   // State
   const [loading, setLoading] = useState();
-  const [data, setData] = useState();
-  const [filtered, setFiltered] = useState();
+  const [data, setData] = useState([]);
+  const [filtered, filteredDispatch] = useReducer(filterReducer, []);
 
   useEffect(() => {
     setLoading(true);
@@ -66,13 +85,13 @@ const TechList = () => {
   }, []);
 
   useEffect(() => {
-    setFiltered(data);
+    filteredDispatch({ type: 'SET_DATA', data });
   }, [data]);
 
   return (
     <div className="tech-list max-width">
       <div className="tech-list__filters">
-        <FilterContent data={data} filtered={filtered} setFiltered={setFiltered} fields={['tech', 'type']} />
+        <FilterContent data={data} filtered={filtered} filterDispatch={filteredDispatch} fields={SEARCH_FIELDS} />
       </div>
       <div className="tech-list__container">
         {!loading && filtered ? (
