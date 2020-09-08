@@ -97,7 +97,7 @@ const LoginForm = () => {
       </div>
 
       <button type="submit" className={classnames('button', 'button--primary', { 'button--loading': loading })} disabled={loading}>
-        {!loading ? <span>{t('login.submit')}</span> : <div className="loading" />}
+        {!loading ? <span>{t('login.submit')}</span> : <div className="loading loading--alt" />}
       </button>
 
       {error && <div className="error-message">{t(error)}</div>}
