@@ -20,7 +20,7 @@ function App({ location }) {
       const element = document.querySelector(hash);
       if (element) {
         setTimeout(() => {
-          const headerOffset = 60;
+          const headerOffset = 120;
           const elementPosition = element.offsetTop - headerOffset;
           window.scrollTo({ top: elementPosition, behavior: 'smooth' });
         }, 150);

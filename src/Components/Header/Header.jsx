@@ -10,11 +10,13 @@ const Header = () => {
   const headerRef = useRef(null);
   const ghostRef = useRef(null);
 
-  const handleResize = () => setHeight(headerRef.current.offsetHeight);
+  const handleResize = () => {
+    setTimeout(() => setHeight(headerRef.current.offsetHeight), 200);
+  };
 
   const handleScroll = () => {
     if (ghostRef.current) {
-      setSticky(window.pageYOffset + 60 > ghostRef.current.offsetHeight);
+      setSticky(window.pageYOffset + 10 > ghostRef.current.offsetHeight);
     }
   };
 
@@ -27,7 +29,7 @@ const Header = () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', () => handleScroll);
     };
-  }, []);
+  }, [sticky]);
 
   return (
     <>
@@ -39,7 +41,7 @@ const Header = () => {
       <div className="header-ghost" style={{ height }} ref={ghostRef} />
       <div className={classnames('header', { 'header--sticky': sticky })} ref={headerRef}>
         <div className="header__container max-width">
-          <Link to="/" className="header__logo">
+          <Link to="/#top" className="header__logo">
             <Svg id="logo" />
           </Link>
           <div className="header__menu">
