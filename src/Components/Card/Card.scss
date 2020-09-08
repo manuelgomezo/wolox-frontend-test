@@ -44,8 +44,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0 0 0.5em var(--black-alpha-20);
-    background: var(--gray-lighter);
+    background: var(--gray-alpha-20);
+    border-radius: 3em;
 
     &:hover {
       background: var(--primary-dark);
@@ -70,8 +70,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 2em;
     background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 2.5em;
     height: 100%;
 
     img {

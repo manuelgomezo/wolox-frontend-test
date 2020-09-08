@@ -1,11 +1,13 @@
 @import '../../Styles/mixins';
 
 .tech-list {
+  margin: 1em auto;
+
   &__container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 1em auto;
+    flex-wrap: wrap;
     padding: 1em;
   }
 
@@ -30,6 +32,16 @@
     @include from-desktop {
       flex-basis: calc(100% / 3);
       max-width: calc(100% / 3);
+    }
+  }
+
+  &__total {
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+
+    strong {
+      font-weight: 900;
     }
   }
 }

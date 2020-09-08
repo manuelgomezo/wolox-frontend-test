@@ -14,11 +14,13 @@ const common = {
   'login.keeplogin': 'Stay signed in',
   'login.required': 'This field is required',
   'login.error': 'There has been an unexpected error',
-  'card.author': 'Author',
-  'card.language': 'Language',
-  'card.license': 'License',
-  'card.type': 'Type',
-  'card.year': 'Year',
+  'filter.search': 'Search: ',
+  'list.total': 'Results: ',
+  'card.author': 'Author: ',
+  'card.language': 'Language: ',
+  'card.license': 'License: ',
+  'card.type': 'Type: ',
+  'card.year': 'Year: ',
   'footer.copy': 'CRAFTED WITH LOVE ❤ BY MANUEL GOMEZ',
 };
 

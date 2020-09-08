@@ -16,7 +16,7 @@ const Header = () => {
 
   const handleScroll = () => {
     if (ghostRef.current) {
-      setSticky(window.pageYOffset + 10 > ghostRef.current.offsetHeight);
+      setSticky(window.pageYOffset + 30 > ghostRef.current.offsetHeight);
     }
   };
 
