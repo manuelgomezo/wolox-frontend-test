@@ -15,7 +15,24 @@ jest.mock('react-i18next', () => ({
   useTranslation: () => ({ t: (key) => key, i18n: (key) => key }),
 }));
 
-describe('TechList', () => {
+describe('TechList getList correct response', () => {
+  beforeAll(() => {
+    Wolox.getList = jest.fn(() => {
+      return new Promise((res) => {
+        const testObject = {
+          tech: 'Manuel Testing',
+        };
+        res([[testObject], null]);
+      });
+    });
+  });
+
+  it('should render TechList correct component', () => {
+    render(<TechList />);
+  });
+});
+
+describe('TechList getList error response', () => {
   beforeAll(() => {
     Wolox.getList = jest.fn(() => {
       return new Promise((res) => {
@@ -24,9 +41,7 @@ describe('TechList', () => {
     });
   });
 
-  it('should validate if empty', () => {});
-
-  it('should render TechList component', () => {
+  it('should render TechList error component', () => {
     render(<TechList />);
   });
 });
