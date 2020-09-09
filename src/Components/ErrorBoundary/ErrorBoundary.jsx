@@ -32,7 +32,13 @@ class ErrorBoundary extends React.Component {
               <button type="button" className="button button--small" onClick={() => this.setState({ showDetails: !showDetails })}>
                 {showDetails ? <span>Hide</span> : <span>Show</span>}
               </button>
-              {showDetails && <div className="app-error__data">{errorInfo}</div>}
+              {showDetails && (
+                <div className="app-error__data">
+                  {error && error.toString()}
+                  <br />
+                  {errorInfo && errorInfo.componentStack && errorInfo.componentStack}
+                </div>
+              )}
             </div>
           </div>
         </div>

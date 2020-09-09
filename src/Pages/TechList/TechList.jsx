@@ -46,6 +46,7 @@ const formatContent = (data) => {
   const formatedData = data.map((item) => {
     return {
       ...item,
+      title: item.tech,
       content: getTechCard(item),
     };
   }, {});

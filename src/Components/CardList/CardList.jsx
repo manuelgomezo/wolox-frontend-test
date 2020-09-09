@@ -5,7 +5,7 @@ import './CardList.scss';
 
 const RenderCard = ({ className, data }) => {
   return (
-    <Card className={className} image={data.logo} title={data.tech}>
+    <Card className={className} image={data.logo} title={data.title}>
       {data.content}
     </Card>
   );
@@ -19,7 +19,7 @@ const CardList = ({ data }) => {
     <div className="card-list">
       <div className="card-list__list">
         {data.map((item, index) => (
-          <RenderCard className="card--horizontal card-list__item" key={`techcard_${index}`} data={item} />
+          <RenderCard className="card--horizontal card-list__item" key={`cardlist-item_${index}`} data={item} />
         ))}
       </div>
       <div className="card-list__total">
