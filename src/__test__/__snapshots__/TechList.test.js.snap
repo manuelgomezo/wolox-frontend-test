@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TechList getList error response should render TechList error component 1`] = `
+<div
+  className="tech-list max-width"
+>
+  <div
+    className="tech-list__filters"
+  >
+    <div
+      className="filter-content"
+    >
+      <div
+        className="filter-content__item"
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          placeholder="filter.search"
+          value=""
+        />
+      </div>
+      <div
+        className="filter-content__item"
+      >
+        <select
+          className="input"
+          defaultValue="default"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            value="default"
+          >
+            filter.sort
+          </option>
+          <option
+            value="desc"
+          >
+            filter.abc
+          </option>
+          <option
+            value="asc"
+          >
+            filter.cba
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div
+    className="tech-list__container"
+  >
+    <div
+      className="loading"
+    />
+  </div>
+</div>
+`;

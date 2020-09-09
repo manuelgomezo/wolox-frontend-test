@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 export const UserContext = createContext(null);
 
 const UserContextContainer = ({ children }) => {
-  const [auth, setAuth] = useState(localStorage.getItem('auth'));
+  const [auth, setAuth] = useState(localStorage.getItem('auth') || false);
 
   const login = (token, save) => {
     if (save) {
@@ -14,7 +14,7 @@ const UserContextContainer = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('auth');
-    setAuth(null);
+    setAuth(false);
   };
 
   const store = {

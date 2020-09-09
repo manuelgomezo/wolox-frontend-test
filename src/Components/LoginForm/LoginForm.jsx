@@ -31,20 +31,16 @@ const LoginForm = () => {
   const onSubmit = (values) => {
     setError(null);
     setLoading(true);
-    Wolox.login(
-      values.email,
-      values.password,
-      (response) => {
-        setLoading(false);
-        if (response.status === 200) {
-          if (response.data && response.data.token) login(response.data.token, values.stay);
-          else setError('login.error');
-        } else {
-          setError('login.error');
-        }
-      },
-      controller.token,
-    );
+    // Wolox Service get tech list and add to data state
+    Wolox.login(values.email, values.password, controller.signal).then(([resposnse, error]) => {
+      if (error) return console.error(error);
+      setLoading(false);
+      login(resposnse.token, values.stay);
+    });
+
+    return () => {
+      controller.cancel();
+    };
   };
 
   useEffect(() => {

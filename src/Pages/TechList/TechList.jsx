@@ -76,7 +76,7 @@ const SEARCH_FIELDS = ['tech', 'type'];
 
 const TechList = () => {
   // Translate service hook
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
 
   // State
   const [loading, setLoading] = useState();
@@ -87,7 +87,7 @@ const TechList = () => {
     setLoading(true);
     // Wolox Service get tech list and add to data state
     Wolox.getList('techs', controller.signal).then(([listData, error]) => {
-      if (error) throw Error(error);
+      if (error) return console.error(error);
       setLoading(false);
       setData(listData);
     });
@@ -102,9 +102,8 @@ const TechList = () => {
   }, [data]);
 
   useEffect(() => {
-    filteredDispatch({ type: 'SET_DATA', data: filtered });
-    // eslint-disable-next-line
-  }, [t]);
+    filteredDispatch({ type: 'SET_DATA', data: formatContent(filtered) });
+  }, [i18n.language]);
 
   return (
     <div className="tech-list max-width">
