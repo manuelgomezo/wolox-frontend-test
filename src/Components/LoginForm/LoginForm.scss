@@ -1,0 +1,29 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+
+  &__item {
+    padding: 0.5em 1em;
+
+    &--error {
+      input {
+        border-color: var(--red);
+      }
+    }
+
+    label {
+      span {
+        padding-left: 0.5em;
+      }
+    }
+  }
+
+  .error-message {
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    color: var(--red);
+  }
+}

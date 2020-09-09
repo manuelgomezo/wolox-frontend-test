@@ -1,0 +1,17 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em auto;
+  padding: 1em;
+  min-height: 50vh;
+  background: var(--primary);
+  box-shadow: 0 0 3vh var(--black-alpha-20);
+  animation: fadeIn 0.5s ease 1 both;
+
+  &__container {
+    padding: 2em;
+    background: white;
+  }
+}

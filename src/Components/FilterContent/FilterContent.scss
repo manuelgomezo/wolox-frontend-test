@@ -1,0 +1,17 @@
+.filter-content {
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    max-width: calc(100% / 2);
+    padding: 0.2em;
+
+    input,
+    select {
+      max-width: 100%;
+    }
+  }
+}

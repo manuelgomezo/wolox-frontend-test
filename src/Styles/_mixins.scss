@@ -1,0 +1,27 @@
+/// @access public
+@mixin from-large-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+/// @access public
+@mixin from-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+/// @access public
+@mixin from-tablet {
+  @media (min-width: 950px) {
+    @content;
+  }
+}
+
+/// @access public
+@mixin from-mobile {
+  @media (min-width: 450px) {
+    @content;
+  }
+}

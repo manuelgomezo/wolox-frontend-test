@@ -1,0 +1,48 @@
+@import './mixins.scss';
+@import './reset.scss';
+@import './fonts.scss';
+@import './theme.scss';
+@import './keyframes.scss';
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--primary-dark);
+  position: relative;
+}
+
+button {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+  @include from-tablet {
+    overflow-y: initial;
+  }
+}
+
+.min-height {
+  min-height: 25em;
+}
+
+.max-width {
+  max-width: 1440px;
+}
+
+.noDesktop {
+  @include from-tablet {
+    display: none;
+  }
+}
+
+.noMobile {
+  display: none;
+
+  @include from-tablet {
+    display: block;
+  }
+}
+
+.lazyload-wrapper {
+  width: 100%;
+}

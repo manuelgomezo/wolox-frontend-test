@@ -1,0 +1,309 @@
+@import '../../Styles/mixins';
+
+.menu {
+  width: 100%;
+
+  &--active {
+    .menu__wrapper {
+      position: fixed;
+      background: var(--secondary-alpha-95);
+      max-height: 100%;
+      padding: 10vh 1vw;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateY(0);
+
+      @include from-tablet {
+        position: initial;
+        background: none;
+        padding: 0;
+      }
+    }
+
+    .menu__icon {
+      position: fixed;
+      top: 7vh;
+      height: auto;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    max-height: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateY(-100%);
+    transform-origin: top;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    @include from-tablet {
+      padding-top: 0;
+      position: relative;
+      justify-content: flex-end;
+      flex-direction: row;
+      max-height: initial;
+      transform: none;
+      background: none;
+    }
+  }
+
+  &__item.menu__item--locales {
+    display: flex;
+    padding: 0.5em 1em;
+
+    @include from-tablet {
+      padding: 0.5em 0.2em;
+    }
+
+    button {
+      flex-basis: calc(100% / 2);
+      max-width: calc(100% / 2);
+      background: none;
+      padding: 0.2em 0.6em;
+      width: 3em;
+      border: none;
+
+      @include from-tablet {
+        padding: 0.2em;
+        width: 1.5em;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item > button,
+  &__item.menu__item--login a {
+    position: relative;
+    font-size: 0.8em;
+    padding: 0.8em 4em;
+    margin-top: 1em;
+    border-radius: 1em;
+    background: none;
+    border: none;
+    color: var(--white);
+
+    @include from-tablet {
+      margin: 0;
+      color: var(--primary);
+      transform: scale(0.95);
+    }
+
+    @include from-large-desktop {
+      padding: 0.8em 5em;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(45deg, var(--white) 50%, transparent 50%);
+      border: 1px solid var(--white);
+      border-radius: 1em;
+      z-index: -1;
+
+      @include from-tablet {
+        background: linear-gradient(45deg, var(--primary) 50%, transparent 50%);
+        border: 1px solid var(--primary);
+      }
+    }
+
+    &,
+    &:after {
+      background-size: 300%;
+      background-position: 100%;
+      transition: all 1s ease;
+    }
+
+    &:hover,
+    &:hover:after {
+      background-position: 0;
+      color: var(--secondary);
+      transform: scale(1);
+
+      @include from-tablet {
+        color: var(--white);
+      }
+    }
+  }
+
+  &__item {
+    font-size: 1.5em;
+
+    @include from-tablet {
+      font-size: 1.1em;
+    }
+
+    @include from-desktop {
+      font-size: 1.25em;
+    }
+  }
+
+  &__item a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 900;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 1em 0.5em;
+    width: 100%;
+
+    @include from-tablet {
+      margin: 0;
+      padding: 0.8em 0.15em;
+      transform: scale(0.9);
+      justify-content: center;
+      height: 100%;
+      color: var(--primary-dark);
+    }
+
+    @include from-large-desktop {
+      padding: 0.8em 0.5em;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      color: var(--white);
+
+      @include from-tablet {
+        color: var(--secondary);
+        transform: scale(1);
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.menu__icon {
+  position: relative;
+  width: 100%;
+  max-width: 2.5em;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+
+  .menu__hamburger {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    height: 100%;
+    margin: 0;
+    overflow: visible;
+    padding: 0 0.1em 0 0.6em;
+    text-transform: none;
+    transition-duration: 0.15s;
+    transition-property: opacity, filter;
+    transition-timing-function: linear;
+    width: 100%;
+  }
+
+  .menu__hamburger:hover {
+    opacity: 1;
+  }
+  .menu--active.menu__hamburger:hover {
+    opacity: 1;
+  }
+
+  .menu__hamburger-box {
+    width: 100%;
+    height: 14px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .menu__hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+  .menu__hamburger-inner,
+  .menu__hamburger-inner::before,
+  .menu__hamburger-inner::after {
+    background-color: var(--primary);
+    border-radius: 5px;
+    height: 2px;
+    position: absolute;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    transition-timing-function: ease;
+    width: 100%;
+  }
+  .menu__hamburger-inner::before,
+  .menu__hamburger-inner::after {
+    content: '';
+    display: block;
+  }
+  .menu__hamburger-inner::before {
+    top: -12px;
+  }
+  .menu__hamburger-inner::after {
+    bottom: -12px;
+  }
+
+  .menu__hamburger--collapse .menu__hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .menu__hamburger--collapse .menu__hamburger-inner::after {
+    top: -6px;
+    height: 2px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+  }
+  .menu__hamburger--collapse .menu__hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}
+
+.menu--active {
+  .menu__hamburger .menu__hamburger-inner,
+  .menu__hamburger .menu__hamburger-inner::before,
+  .menu__hamburger .menu__hamburger-inner::after {
+    background-color: var(--white);
+  }
+
+  .menu__hamburger--collapse .menu__hamburger-inner {
+    margin-bottom: -4px;
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .menu__hamburger--collapse .menu__hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+  }
+  .menu__hamburger--collapse .menu__hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}

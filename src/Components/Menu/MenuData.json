@@ -1,0 +1,32 @@
+[
+  {
+    "title": "menu.home",
+    "type": "anchor",
+    "link": "/",
+    "hash": "top"
+  },
+  {
+    "title": "menu.technologies",
+    "type": "anchor",
+    "link": "/",
+    "hash": "technologies"
+  },
+  {
+    "title": "menu.benefits",
+    "type": "anchor",
+    "link": "/",
+    "hash": "benefits"
+  },
+  {
+    "title": "menu.requirements",
+    "type": "anchor",
+    "link": "/",
+    "hash": "requirements"
+  },
+  {
+    "title": "menu.techlist",
+    "type": "link",
+    "restricted": true,
+    "link": "/techlist"
+  }
+]
