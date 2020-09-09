@@ -6,7 +6,7 @@ import './Header.scss';
 
 const Header = () => {
   const [sticky, setSticky] = useState();
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState(150);
   const headerRef = useRef(null);
   const ghostRef = useRef(null);
 
