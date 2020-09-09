@@ -13,7 +13,7 @@ i18n.use(LanguageDetector).init({
     },
   },
   fallbackLng: 'es',
-  debug: true,
+  debug: false,
 
   ns: ['translations'],
   defaultNS: 'translations',

@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import classnames from 'classnames';
 import axios from 'axios';
 
+import { Loading } from 'Components';
+
 // Services
 import Wolox from 'Services/Wolox';
 
@@ -94,7 +96,7 @@ const LoginForm = () => {
       </div>
 
       <button type="submit" className={classnames('button', 'button--primary', { 'button--loading': loading })} disabled={loading}>
-        {!loading ? <span>{t('login.submit')}</span> : <div className="loading loading--alt" />}
+        {!loading ? <span>{t('login.submit')}</span> : <Loading color="white" />}
       </button>
 
       {error && <div className="error-message">{t(error)}</div>}

@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import './ErrorBoundary.scss';
 import { Svg } from 'Components';
 
@@ -32,13 +33,11 @@ class ErrorBoundary extends React.Component {
               <button type="button" className="button button--small" onClick={() => this.setState({ showDetails: !showDetails })}>
                 {showDetails ? <span>Hide</span> : <span>Show</span>}
               </button>
-              {showDetails && (
-                <div className="app-error__data">
-                  {error && error.toString()}
-                  <br />
-                  {errorInfo && errorInfo.componentStack && errorInfo.componentStack}
-                </div>
-              )}
+              <div className={classnames('app-error__data', { 'app-error__data--show': showDetails })}>
+                {error && error.toString()}
+                <br />
+                {errorInfo && errorInfo.componentStack && errorInfo.componentStack}
+              </div>
             </div>
           </div>
         </div>
