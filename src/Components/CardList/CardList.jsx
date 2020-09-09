@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'Components';
+import './CardList.scss';
 
 const RenderCard = ({ className, data }) => {
   return (

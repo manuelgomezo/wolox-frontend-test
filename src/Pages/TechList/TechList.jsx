@@ -7,22 +7,6 @@ import { searchFilter, sortData } from 'Utils/arrays';
 
 import './TechList.scss';
 
-const filterReducer = (state, action) => {
-  let newData = [];
-  switch (action.type) {
-    case 'FILTER_TEXT':
-      newData = searchFilter([...action.data], action.keyword, action.fields);
-      return newData;
-    case 'SET_DATA':
-      return [...action.data];
-    case 'SORT':
-      newData = sortData([...state], action.order, action.field);
-      return newData;
-    default:
-      throw new Error();
-  }
-};
-
 const getTechCard = (item) => (
   <div className="tech-item">
     <div className="tech-item__prop">
@@ -68,6 +52,24 @@ const formatContent = (data) => {
   return formatedData;
 };
 
+const filterReducer = (state, action) => {
+  let newData = [];
+  switch (action.type) {
+    case 'FILTER_TEXT':
+      newData = searchFilter([...action.data], action.keyword, action.fields);
+      break;
+    case 'SET_DATA':
+      newData = [...action.data];
+      break;
+    case 'SORT':
+      newData = sortData([...state], action.order, action.field);
+      break;
+    default:
+      throw new Error();
+  }
+  return formatContent(newData);
+};
+
 // Cancel token for LOGIN Request
 const controller = axios.CancelToken.source();
 const SEARCH_FIELDS = ['tech', 'type'];
@@ -96,8 +98,13 @@ const TechList = () => {
   }, []);
 
   useEffect(() => {
-    filteredDispatch({ type: 'SET_DATA', data: formatContent(data) });
-  }, [t, data]);
+    filteredDispatch({ type: 'SET_DATA', data });
+  }, [data]);
+
+  useEffect(() => {
+    filteredDispatch({ type: 'SET_DATA', data: filtered });
+    // eslint-disable-next-line
+  }, [t]);
 
   return (
     <div className="tech-list max-width">
