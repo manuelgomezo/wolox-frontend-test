@@ -13,7 +13,71 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="header"></div>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+        :root {
+          --primary: rgb(42, 167, 223);
+        }
+
+        @keyframes loadingLogo {
+          0% {
+            transform: scale(0.8);
+          }
+          50% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0.8);
+          }
+        }
+
+        .loading {
+          display: block;
+          position: relative;
+          margin: 3rem auto;
+          width: 5em;
+          height: 5em;
+          z-index: 1;
+        }
+        .loading div {
+          position: absolute;
+          border: 4px solid var(--primary);
+          opacity: 1;
+          border-radius: 50%;
+          animation: loading 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        .loading div:nth-child(2) {
+          animation-delay: -0.5s;
+        }
+        @keyframes loading {
+          0% {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            opacity: 1;
+          }
+          100% {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+        }
+      </style>
+
+      <div style="text-align: center; height: 50vh; max-width: 100%; margin: 0 auto; position: relative">
+        <img src="/logo.svg" style="margin: 25vh auto 0 auto; max-width: 90%; width: 300px; animation: loadingLogo 3s infinite" />
+
+        <div class="loading">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
     <div id="footer"></div>
   </body>
 </html>
