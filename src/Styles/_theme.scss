@@ -113,6 +113,10 @@ a {
     position: relative;
     z-index: 2;
   }
+
+  div {
+    z-index: 2;
+  }
 }
 
 .button--icon {
@@ -158,6 +162,13 @@ button.button--loading,
 .button--loading:hover {
   background: var(--gray-dark);
   cursor: not-allowed;
+  padding: 0.2em 3em;
+  transition: none;
+
+  .loading {
+    width: 2.5em;
+    height: 2.5em;
+  }
 
   &:after {
     display: none;
@@ -327,41 +338,5 @@ button.button--loading,
 
   &:focus {
     border-color: var(--primary);
-  }
-}
-
-.loading {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1em;
-  height: 100%;
-  max-height: 3em;
-  z-index: 10;
-}
-
-.loading--alt.loading:after {
-  border: 2px solid var(--white);
-  border-color: var(--white) transparent var(--white) transparent;
-}
-
-.loading:after {
-  content: ' ';
-  display: block;
-  width: calc(100% + 1em);
-  height: 100%;
-  margin: auto;
-  border-radius: 50%;
-  border: 2px solid var(--primary);
-  border-color: var(--primary) transparent var(--primary) transparent;
-  animation: loading 1.2s linear infinite;
-}
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

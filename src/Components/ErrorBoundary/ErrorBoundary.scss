@@ -13,6 +13,11 @@
     margin: 0.5em auto;
   }
 
+  &__description {
+    width: 100%;
+    text-align: center;
+  }
+
   &__container {
     display: flex;
     justify-content: center;
@@ -20,6 +25,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: 5em 2em;
+    max-width: 80%;
     background: white;
     box-shadow: 0 0 3em var(--black-alpha-30);
 
@@ -31,8 +37,16 @@
   &__data {
     width: 100%;
     text-align: left;
-    padding: 1em;
-    border: 1px solid var(--red);
     color: var(--red);
+    word-break: break-word;
+    max-height: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &--show {
+      padding: 1em;
+      max-height: 100vh;
+      border: 1px solid var(--red);
+    }
   }
 }

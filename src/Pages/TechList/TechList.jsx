@@ -2,7 +2,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { Trans, withTranslation } from 'react-i18next';
 import axios from 'axios';
 import Wolox from 'Services/Wolox';
-import { CardList, FilterContent } from 'Components';
+import { CardList, FilterContent, Loading } from 'Components';
 import { searchFilter, sortData } from 'Utils/arrays';
 
 import './TechList.scss';
@@ -109,7 +109,7 @@ const TechList = ({ i18n }) => {
       <div className="tech-list__filters">
         <FilterContent data={data} filtered={filtered} filterDispatch={filteredDispatch} fields={SEARCH_FIELDS} />
       </div>
-      <div className="tech-list__container">{!loading && filtered ? <CardList data={filtered} /> : <div className="loading" />}</div>
+      <div className="tech-list__container">{!loading && filtered ? <CardList data={filtered} /> : <Loading />}</div>
     </div>
   );
 };

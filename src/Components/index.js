@@ -10,3 +10,4 @@ export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { default as Card } from './Card/Card';
 export { default as FilterContent } from './FilterContent/FilterContent';
 export { default as CardList } from './CardList/CardList';
+export { default as Loading } from './Loading/Loading';

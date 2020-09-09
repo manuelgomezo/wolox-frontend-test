@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, Suspense, lazy } from 'react';
 import { Switch, useHistory, useLocation } from 'react-router-dom';
 
 // Components
-import { Header, Footer, Portal, RouteComponent } from 'Components';
+import { Header, Footer, Portal, RouteComponent, Loading } from 'Components';
 
 // Contexts
 import { UserContext } from 'Contexts/UserContext';
@@ -57,7 +57,7 @@ function App() {
           <Header setShowHeader={setShowHeader} />
         </Portal>
       )}
-      <Suspense fallback={<div className="loading" />}>
+      <Suspense fallback={<Loading />}>
         <Switch>
           <RouteComponent exact path="/" component={Home} />
           <RouteComponent exact path="/login" component={Login} />
