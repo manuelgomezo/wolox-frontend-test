@@ -39,7 +39,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (location.hash) {
+    if (location && location.hash) {
       const tryToScroll = setTimeout(() => {
         if (!scrollToHash(location.hash)) tryToScroll();
       }, 50);

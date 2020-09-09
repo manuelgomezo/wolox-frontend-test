@@ -9,3 +9,4 @@ export { default as RouteComponent } from './RouteComponent/RouteComponent';
 export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { default as Card } from './Card/Card';
 export { default as FilterContent } from './FilterContent/FilterContent';
+export { default as CardList } from './CardList/CardList';
