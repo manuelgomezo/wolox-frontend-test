@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import axios from 'axios';
 import Wolox from 'Services/Wolox';
 import { CardList, FilterContent } from 'Components';
@@ -74,10 +74,7 @@ const filterReducer = (state, action) => {
 const controller = axios.CancelToken.source();
 const SEARCH_FIELDS = ['tech', 'type'];
 
-const TechList = () => {
-  // Translate service hook
-  const { i18n } = useTranslation();
-
+const TechList = ({ i18n }) => {
   // State
   const [loading, setLoading] = useState();
   const [data, setData] = useState([]);
@@ -87,7 +84,7 @@ const TechList = () => {
     setLoading(true);
     // Wolox Service get tech list and add to data state
     Wolox.getList('techs', controller.signal).then(([listData, error]) => {
-      if (error) return console.error(error);
+      if (error) throw new Error(error);
       setLoading(false);
       setData(listData);
     });
@@ -103,6 +100,7 @@ const TechList = () => {
 
   useEffect(() => {
     filteredDispatch({ type: 'SET_DATA', data: formatContent(filtered) });
+    // eslint-disable-next-line
   }, [i18n.language]);
 
   return (
@@ -115,4 +113,4 @@ const TechList = () => {
   );
 };
 
-export default TechList;
+export default withTranslation()(TechList);
